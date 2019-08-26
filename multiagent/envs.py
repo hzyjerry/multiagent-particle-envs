@@ -16,7 +16,6 @@ def _make_env(scenario_name):
 class MultiagentSimple(gym.Wrapper):
     def __init__(self):
         env = _make_env("simple")
-        env.discrete_action_space = False
         super().__init__(env)
 
 
