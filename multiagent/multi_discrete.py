@@ -29,7 +29,7 @@ class MultiDiscrete(gym.Space):
     def sample(self):
         """ Returns a array with one sample from each discrete action space """
         # For each row: round(random .* (max - min) + min, 0)
-        # Note JH: rely on gym.Space.np_random to do random seeding
+        # (Note JH): rely on gym.Space.np_random to do random seeding
         random_array = self.np_random.rand(self.num_discrete_space)
         return [int(x) for x in np.floor(np.multiply((self.high - self.low + 1.), random_array) + self.low)]
     def contains(self, x):
